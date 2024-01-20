@@ -9,8 +9,8 @@ def contains_questionmark(text):
 #import the data
 jokes = pd.read_csv('all_jokes.csv', sep = ';', index_col=False)
 
-st.header('Joke?', divider = 'gray')
-if st.button('Hit me'):
+st.header('May I tell you a joke?', divider = 'gray')
+if st.button('yeap'):
     index = random.randint(0, len(jokes)-1)
     joke = jokes.iloc[index,0]
     if contains_questionmark(joke):
@@ -29,4 +29,5 @@ new_jokes = pd.read_csv('new_jokes.csv', sep = ';', index_col=False)
 if new_joke and new_joke not in jokes[['Joke']] and new_joke not in new_jokes:
    new_jokes.loc[len(new_jokes)] = new_joke
 #export the new jokes into a csv file
+st.write(new_jokes)
 new_jokes.to_csv('new_jokes.csv', sep=';', index = False)
