@@ -21,7 +21,7 @@ if st.button('Hit me'):
     else:
         st.write(joke)
 
-with st.expander('Want to contribute? Tell us a joke'):
+with st.expander('Want to contribute?'):
     new_joke = st.text_input('Tell us a joke!', placeholder = 'Write here...')
 
 #read the template df for new jokes
