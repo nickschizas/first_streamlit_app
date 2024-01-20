@@ -21,4 +21,5 @@ ADMIN_USERS = {'sxizasboy@gmail.com'}
 if st.experimental_user.email in ADMIN_USERS:
 	st.write('user found')
 else:
-	st.write('user not found')
+	email = st.experimental_user.email
+	st.write(f'user: {email} not found')
