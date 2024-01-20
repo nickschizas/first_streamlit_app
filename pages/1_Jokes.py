@@ -1,6 +1,5 @@
 import streamlit as st
 import pandas as pd
-import SQLAlchemy
 import random
 
 #search for questionmark
@@ -21,15 +20,3 @@ if st.button('yeap'):
         st.write(answer)
     else:
         st.write(joke)
-        
-new_joke = st.text_input('Want to contribute?', placeholder = 'Write you joke here')
-#Update the new data
-conn = st.connection('entries_db', type='sql')
-with conn.session as s:
-    s.execute('CREATE TABLE IF NOT EXISTS new_jokes (Joke TEXT);')
-    s.execute('INSERT INTO new_jokes (Joke) VALUES (new_joke);')
-    s.commit()
-
-#See the results
-new_jokes = conn.query('select * from new_jokes')
-st.dataframe(new_jokes)
