@@ -16,5 +16,4 @@ name = st.text_input('Say hi', placeholder = 'Enter your name here...')
 st.write('Greetings, '+name+'! Good to see you !')
 
 names = pd.read_csv('names.csv', sep = ';')
-names.iloc[len(names),0] = datetime.now().date().strftime("%d/%m/%Y")
-names.iloc[len(names),0] = name
+names.loc[len(names)] = [datetime.now().date().strftime("%d/%m/%Y"), name]
