@@ -13,7 +13,8 @@ st.header('Hello there! :wave:', divider = 'gray')
 st.code(code, language='python')
 
 name = st.text_input('Say hi', placeholder = 'Enter your name here...')
-st.write('Greetings, '+name+'! Good to see you !')
+if name:
+	st.write('Greetings, '+name+'! Good to see you !')
 
 names = pd.read_csv('names.csv', sep = ';')
 names.loc[len(names)] = [datetime.now().date().strftime("%d/%m/%Y"), name]
