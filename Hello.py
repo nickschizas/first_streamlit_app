@@ -1,5 +1,7 @@
 import streamlit as st
 
+st.set_page_config(page_title="MyFirstApp", theme="dark")
+
 code = '''class Me:
 	def __init__(self, first_name, last_name):
 		self.first_name = Nick
