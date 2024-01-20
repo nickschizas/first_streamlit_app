@@ -20,14 +20,3 @@ if st.button('yeap'):
         st.write(answer)
     else:
         st.write(joke)
-
-with st.expander('Want to contribute?'):
-    new_joke = st.text_input('Tell us a joke!', placeholder = 'Write here...')
-
-#read the template df for new jokes
-new_jokes = pd.read_csv('new_jokes.csv', sep = ';', index_col=False)
-if new_joke and new_joke not in jokes[['Joke']] and new_joke not in new_jokes:
-   new_jokes.loc[len(new_jokes)] = new_joke
-#export the new jokes into a csv file
-st.write(new_jokes)
-new_jokes.to_csv('new_jokes.csv', sep=';', index = False)
