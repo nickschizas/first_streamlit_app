@@ -15,11 +15,3 @@ st.code(code, language='python')
 name = st.text_input('Say hi', placeholder = 'Enter your name here...')
 if name:
 	st.write('Greetings, '+name+' ! Nice to meet you !')
-
-
-ADMIN_USERS = {'sxizasboy@gmail.com'}
-if st.experimental_user.email in ADMIN_USERS:
-	st.write('user found')
-else:
-	email = st.experimental_user.email
-	st.write(f'user: {email} not found')
