@@ -20,3 +20,7 @@ if st.button('Hit me!'):
         st.write(answer)
     else:
         st.write(joke)
+
+st.empty()
+st.empty()
+st.divider()
