@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 from datetime import datetime
 
-st.set_page_config(page_title='MyFirstApp', layout='centered')
+st.set_page_config(page_title='Hello', layout='centered')
 
 code = '''class Me:
 	def __init__(self, first_name, last_name):
