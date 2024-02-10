@@ -20,3 +20,11 @@ if st.button('Hit me!'):
         st.write(answer)
     else:
         st.write(joke)
+
+st.divider()
+#def new_joke(joke):
+ #   new_joke_df = pd.DataFrame({'Joke' : joke})
+  #  new_joke_df.to_csv() 
+
+st.text_area(label='Want to contribute?', placeholder='write your joke here', key='new_joke')
+st.write(st.session_state.new_joke)
