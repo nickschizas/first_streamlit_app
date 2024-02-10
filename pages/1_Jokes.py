@@ -22,9 +22,9 @@ if st.button('Hit me!'):
         st.write(joke)
 
 st.divider()
-#def new_joke(joke):
- #   new_joke_df = pd.DataFrame({'Joke' : joke})
-  #  new_joke_df.to_csv() 
+def new_joke(joke):
+    new_joke_df = pd.DataFrame({'Joke' : joke})
+    new_joke_df.to_csv('new_joke.csv', sep=';') 
 
-st.text_area(label='Want to contribute?', placeholder='write your joke here', key='new_joke')
+st.text_area(label='Want to contribute?', placeholder='write your joke here', key='new_joke', on_change=new_joke(st.session_state.new_joke)
 st.write(st.session_state.new_joke)
